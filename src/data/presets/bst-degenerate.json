@@ -1,0 +1,7 @@
+{
+  "id": "bst-degenerate",
+  "structureId": "bst",
+  "label": "Sorted input (degenerate, 10 keys)",
+  "description": "Ten keys inserted in ascending order. Every key becomes a right child, so the tree is a chain of height 10 and every O(h) operation is visibly O(n). This is the comparison case for the balanced preset.",
+  "values": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+}

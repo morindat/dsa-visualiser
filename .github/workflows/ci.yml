@@ -1,0 +1,14 @@
+name: ci
+on: [push, pull_request]
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: npm }
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm run lint # NFR-M2 boundary rule fails the build here
+      - run: npm run test:core # DOM-free; proves the boundary is real
+      - run: npm run build

@@ -1,0 +1,54 @@
+[
+  {
+    "index": 0,
+    "operation": "stackPeek",
+    "codeLine": 2,
+    "narration": "The stack is not empty: top is slot 2, holding 70.",
+    "highlight": {
+      "nodes": [
+        "s3"
+      ],
+      "active": "s3",
+      "edges": []
+    },
+    "delta": {},
+    "aux": {
+      "kind": "stack",
+      "values": [
+        50,
+        30,
+        70
+      ],
+      "indices": [
+        2
+      ],
+      "comparisons": 0
+    }
+  },
+  {
+    "index": 1,
+    "operation": "stackPeek",
+    "codeLine": 4,
+    "narration": "Return the top value 70. Peek is O(1) and changes nothing.",
+    "highlight": {
+      "nodes": [
+        "s3"
+      ],
+      "active": "s3",
+      "edges": []
+    },
+    "delta": {},
+    "aux": {
+      "kind": "stack",
+      "values": [
+        50,
+        30,
+        70
+      ],
+      "indices": [
+        2
+      ],
+      "comparisons": 0
+    }
+  }
+]

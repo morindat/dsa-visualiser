@@ -1,0 +1,109 @@
+# =============================================================================
+# project-3-PY — Interactive Data Structure and Algorithms Visualizer
+# Node / Vite / React / TypeScript
+# =============================================================================
+
+# ------------------------------- dependencies -------------------------------
+node_modules/
+.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# --------------------------------- build ------------------------------------
+dist/
+dist-ssr/
+build/
+out/
+*.local
+.vite/
+node_modules/.vite/
+
+# ------------------------------ TypeScript ----------------------------------
+*.tsbuildinfo
+
+# -------------------------------- testing -----------------------------------
+coverage/
+*.lcov
+.nyc_output/
+junit.xml
+vitest.config.ts.timestamp-*
+
+# ------------------------ end-to-end / visual tests -------------------------
+playwright-report/
+blob-report/
+test-results/
+.playwright/
+.cypress/videos/
+.cypress/screenshots/
+
+# -------------------------------- linting -----------------------------------
+.eslintcache
+.stylelintcache
+.ruff_cache/
+
+# -------------------------- environment & secrets ---------------------------
+.env
+.env.*
+!.env.example
+*.pem
+
+# ---------------------------- generated traces ------------------------------
+# Golden traces are committed; ad-hoc dumps are not.
+trace-dumps/
+*.trace.json
+
+# ------------------------- assignment resources -----------------------------
+# ProjectResources/ holds the Assignment 1 and 2 design documents. The LaTeX and
+# Markdown sources are tracked so the documents are version-controlled; the PDFs
+# are rebuildable artefacts, and Assignment 2.pdf is the course brief, which is
+# not ours to redistribute.
+ProjectResources/**/*.pdf
+
+# -------------------------------- logging -----------------------------------
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# ------------------------------- packaging ----------------------------------
+.tgz
+.pack
+
+# ---------------------------- editors & IDEs --------------------------------
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json.example
+.idea/
+*.iml
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.code-workspace
+
+# ------------------------------- operating systems --------------------------
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# ------------------------------- miscellaneous ------------------------------
+.cache/
+.temp/
+.tmp/
+tmp/
+*.pid
+*.seed
+*.pid.lock

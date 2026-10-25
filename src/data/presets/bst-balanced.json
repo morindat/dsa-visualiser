@@ -1,0 +1,7 @@
+{
+  "id": "bst-balanced",
+  "structureId": "bst",
+  "label": "Balanced BST (10 keys)",
+  "description": "Ten keys inserted in median-first order, producing height 4. This is the O(log n) case, and it is also the tree the four traversals are demonstrated on.",
+  "values": [9, 5, 13, 3, 7, 11, 15, 2, 4, 6]
+}

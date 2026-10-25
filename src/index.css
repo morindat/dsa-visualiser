@@ -1,0 +1,294 @@
+@import 'tailwindcss';
+
+/*
+ * One semantic palette, two themes (NFR-U2).
+ *
+ * Components never name a colour; they use `bg-surface`, `text-ink`,
+ * `border-line`, `text-bad`, … and the palette below decides what that means.
+ * The theme hook flips `data-theme="light"` on <html>; every utility resolves
+ * through the same custom property, so the switch is one attribute.
+ *
+ * Contrast targets (WCAG 2.1 AA, NFR-U2):
+ *   dark   ink #e6edf6 / surface #121924  ≈ 15.0:1
+ *          muted #94a3b8 / surface        ≈  7.0:1
+ *   light  ink #0f1a26 / surface #ffffff  ≈ 17.5:1
+ *          muted #516174 / surface        ≈  6.6:1
+ *
+ * Node fills keep the semantic state names the renderers use. Text drawn on a
+ * bright node is always `base`, which is dark in the dark theme and light in the
+ * light theme — so a fill that changes appearance never loses its label.
+ */
+@theme {
+  /* type */
+  --font-sans:
+    'IBM Plex Sans Variable', ui-sans-serif, system-ui, -apple-system,
+    'Segoe UI', sans-serif;
+  --font-mono:
+    'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  /* dark theme (default) */
+  --color-base: #0d1117;
+  --color-base-deep: #080b10;
+  --color-surface: #121924;
+  --color-raised: #1b2533;
+  --color-line: #263243;
+  --color-line-strong: #35455c;
+
+  --color-ink: #e6edf6;
+  --color-ink-dim: #c2cddb;
+  --color-muted: #94a3b8;
+  --color-subtle: #7b8a9e;
+
+  --color-accent: #5eead4;
+  --color-accent-strong: #2dd4bf;
+  --color-accent-ink: #062c28;
+  --color-info: #7dd3fc;
+  --color-cyan: #67e8f9;
+  --color-good: #86efac;
+  --color-warn: #fbbf24;
+  --color-bad: #fb7185;
+  --color-orange: #fdba74;
+
+  --color-node-undiscovered: #263243;
+  --color-node-frontier: #fbbf24;
+  --color-node-current: #5eead4;
+  --color-node-visited: #86efac;
+  /* Text and outline that stay readable on every bright node fill. */
+  --color-node-ink: #071410;
+  --color-node-stroke: #0d1117;
+
+  --color-stage-grid: #1a2432;
+  --color-scrim: rgb(4 8 14 / 0.72);
+}
+
+/* Light theme: the same semantic slots, re-pointed. */
+:root[data-theme='light'] {
+  --color-base: #eef2f6;
+  --color-base-deep: #e3e9f0;
+  --color-surface: #ffffff;
+  --color-raised: #f1f5f9;
+  --color-line: #d5dde7;
+  --color-line-strong: #b7c3d2;
+
+  --color-ink: #0f1a26;
+  --color-ink-dim: #24364a;
+  --color-muted: #516174;
+  --color-subtle: #64748b;
+
+  --color-accent: #0f766e;
+  --color-accent-strong: #0d9488;
+  --color-accent-ink: #f0fdfa;
+  --color-info: #0369a1;
+  --color-cyan: #0e7490;
+  --color-good: #15803d;
+  --color-warn: #b45309;
+  --color-bad: #be123c;
+  --color-orange: #c2410c;
+
+  --color-node-undiscovered: #dbe3ec;
+  --color-node-frontier: #f59e0b;
+  --color-node-current: #0d9488;
+  --color-node-visited: #16a34a;
+  --color-node-stroke: #64748b;
+
+  --color-stage-grid: #dde5ee;
+  --color-scrim: rgb(15 26 38 / 0.46);
+}
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  :root[data-theme='light'] {
+    color-scheme: light;
+  }
+
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    margin: 0;
+    background-color: var(--color-base);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 15px;
+    line-height: 1.55;
+    font-feature-settings:
+      'cv05' 1,
+      'cv08' 1;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background-color: var(--color-accent);
+    color: var(--color-accent-ink);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+  }
+
+  button,
+  input,
+  select,
+  textarea {
+    font: inherit;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  button:disabled {
+    cursor: not-allowed;
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-line-strong) transparent;
+  }
+
+  *::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    border: 3px solid transparent;
+    border-radius: 9999px;
+    background-clip: content-box;
+    background-color: var(--color-line-strong);
+  }
+
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+}
+
+@layer components {
+  .app-frame {
+    display: flex;
+    min-height: 100dvh;
+    flex-direction: column;
+    background-color: var(--color-base);
+    color: var(--color-ink);
+  }
+
+  /* On a wide screen the workbench is a fixed frame: only the rail scrolls. */
+  @media (min-width: 1280px) {
+    .app-frame {
+      height: 100dvh;
+      overflow: hidden;
+    }
+  }
+
+  .stage-grid {
+    background-image: radial-gradient(
+      circle at 1px 1px,
+      var(--color-stage-grid) 1px,
+      transparent 0
+    );
+    background-size: 22px 22px;
+    background-position: center;
+  }
+
+  .stage-canvas svg {
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+  }
+
+  /*
+   * A layered graph needs more than 300px to keep its labels legible. On a phone
+   * the canvas scrolls horizontally instead of shrinking the whole drawing; the
+   * pane starts centred so the source is visible.
+   */
+  .stage-canvas--graph {
+    overflow: auto;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .tour-spotlight {
+    border-radius: 14px;
+    box-shadow: 0 0 0 9999px var(--color-scrim);
+    transition:
+      top 220ms ease,
+      left 220ms ease,
+      width 220ms ease,
+      height 220ms ease;
+  }
+
+  .range {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 4px;
+    border-radius: 9999px;
+    background: var(--color-raised);
+    outline-offset: 6px;
+  }
+
+  .range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 9999px;
+    border: 2px solid var(--color-surface);
+    background: var(--color-accent);
+    box-shadow: 0 0 0 1px var(--color-line-strong);
+  }
+
+  .range::-moz-range-thumb {
+    width: 13px;
+    height: 13px;
+    border-radius: 9999px;
+    border: 2px solid var(--color-surface);
+    background: var(--color-accent);
+    box-shadow: 0 0 0 1px var(--color-line-strong);
+  }
+
+  .range:disabled {
+    opacity: 0.45;
+  }
+
+  .kbd {
+    display: inline-flex;
+    min-width: 1.35rem;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--color-line);
+    border-bottom-width: 2px;
+    border-radius: 0.3rem;
+    background: var(--color-base-deep);
+    padding: 0.05rem 0.3rem;
+    color: var(--color-muted);
+    font-family: var(--font-mono);
+    font-size: 10px;
+    line-height: 1.4;
+  }
+
+  .thin-rule {
+    border-top: 1px solid var(--color-line);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

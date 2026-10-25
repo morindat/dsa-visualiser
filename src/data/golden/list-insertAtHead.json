@@ -1,0 +1,88 @@
+[
+  {
+    "index": 0,
+    "operation": "insertAtHead",
+    "codeLine": 2,
+    "narration": "Create a new node holding 45.",
+    "highlight": {
+      "nodes": [
+        "n4"
+      ],
+      "active": "n4",
+      "edges": []
+    },
+    "delta": {
+      "created": [
+        {
+          "id": "n4",
+          "value": 45
+        }
+      ]
+    }
+  },
+  {
+    "index": 1,
+    "operation": "insertAtHead",
+    "codeLine": 3,
+    "narration": "Point the new node's next at 50 — the current head.",
+    "highlight": {
+      "nodes": [
+        "n4",
+        "n1"
+      ],
+      "active": "n4",
+      "edges": [
+        {
+          "from": "n4",
+          "to": "n1",
+          "kind": "next"
+        }
+      ]
+    },
+    "delta": {
+      "linked": [
+        {
+          "from": "n4",
+          "to": "n1",
+          "kind": "next"
+        }
+      ]
+    }
+  },
+  {
+    "index": 2,
+    "operation": "insertAtHead",
+    "codeLine": 4,
+    "narration": "Move the head pointer to the new node.",
+    "highlight": {
+      "nodes": [
+        "n4"
+      ],
+      "active": "n4",
+      "edges": []
+    },
+    "delta": {
+      "updated": [
+        {
+          "id": "@head",
+          "from": "n1",
+          "to": "n4"
+        }
+      ]
+    }
+  },
+  {
+    "index": 3,
+    "operation": "insertAtHead",
+    "codeLine": 5,
+    "narration": "45 is now the head. Insert at head is O(1): no existing node was touched.",
+    "highlight": {
+      "nodes": [
+        "n4"
+      ],
+      "active": "n4",
+      "edges": []
+    },
+    "delta": {}
+  }
+]

@@ -1,0 +1,7 @@
+{
+  "id": "stack-basic",
+  "structureId": "stack",
+  "label": "Stack (10 values)",
+  "description": "Ten values loaded bottom to top. The top is 25, so push, pop and peek all act on that single end.",
+  "values": [50, 30, 70, 20, 40, 60, 80, 10, 90, 25]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "heap-valid",
+  "structureId": "heap",
+  "label": "Valid min-heap (10 values)",
+  "description": "A min-heap already satisfying the heap property, for insert (sift-up) and extract-min (sift-down). Its array and its tree are the same 10 slots, which is the dual-rendering lesson.",
+  "kind": "min",
+  "values": [1, 3, 12, 7, 9, 15, 19, 42, 56, 34]
+}

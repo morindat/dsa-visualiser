@@ -1,0 +1,201 @@
+[
+  {
+    "index": 0,
+    "operation": "insertAt",
+    "codeLine": 2,
+    "narration": "Create a new node holding 45. It is floating until the links are made.",
+    "highlight": {
+      "nodes": [
+        "n4"
+      ],
+      "active": "n4",
+      "edges": []
+    },
+    "delta": {
+      "created": [
+        {
+          "id": "n4",
+          "value": 45
+        }
+      ]
+    }
+  },
+  {
+    "index": 1,
+    "operation": "insertAt",
+    "codeLine": 7,
+    "narration": "Start at the head, 50; the walk must stop on the node at position 1.",
+    "highlight": {
+      "nodes": [
+        "n1"
+      ],
+      "active": "n1",
+      "edges": []
+    },
+    "delta": {}
+  },
+  {
+    "index": 2,
+    "operation": "insertAt",
+    "codeLine": 8,
+    "narration": "The head is position 0, so the walk starts counting at i = 1.",
+    "highlight": {
+      "nodes": [
+        "n1"
+      ],
+      "active": "n1",
+      "edges": []
+    },
+    "delta": {}
+  },
+  {
+    "index": 3,
+    "operation": "insertAt",
+    "codeLine": 9,
+    "narration": "i = 1 < 2 and 50 has a next node, so advance one hop.",
+    "highlight": {
+      "nodes": [
+        "n1",
+        "n2"
+      ],
+      "active": "n1",
+      "edges": [
+        {
+          "from": "n1",
+          "to": "n2",
+          "kind": "next"
+        }
+      ]
+    },
+    "delta": {}
+  },
+  {
+    "index": 4,
+    "operation": "insertAt",
+    "codeLine": 10,
+    "narration": "Move current to 30.",
+    "highlight": {
+      "nodes": [
+        "n2"
+      ],
+      "active": "n2",
+      "edges": []
+    },
+    "delta": {}
+  },
+  {
+    "index": 5,
+    "operation": "insertAt",
+    "codeLine": 11,
+    "narration": "Increment i to 2. The walk has taken 1 hop(s).",
+    "highlight": {
+      "nodes": [
+        "n2"
+      ],
+      "active": "n2",
+      "edges": []
+    },
+    "delta": {}
+  },
+  {
+    "index": 6,
+    "operation": "insertAt",
+    "codeLine": 9,
+    "narration": "i = 2 has reached position 1; stop on 30 and splice after it.",
+    "highlight": {
+      "nodes": [
+        "n2",
+        "n3"
+      ],
+      "active": "n2",
+      "edges": [
+        {
+          "from": "n2",
+          "to": "n3",
+          "kind": "next"
+        }
+      ]
+    },
+    "delta": {}
+  },
+  {
+    "index": 7,
+    "operation": "insertAt",
+    "codeLine": 12,
+    "narration": "Point the new node's next at 70, the node currently after 30.",
+    "highlight": {
+      "nodes": [
+        "n2",
+        "n4",
+        "n3"
+      ],
+      "active": "n4",
+      "edges": [
+        {
+          "from": "n4",
+          "to": "n3",
+          "kind": "next"
+        }
+      ]
+    },
+    "delta": {
+      "linked": [
+        {
+          "from": "n4",
+          "to": "n3",
+          "kind": "next"
+        }
+      ]
+    }
+  },
+  {
+    "index": 8,
+    "operation": "insertAt",
+    "codeLine": 13,
+    "narration": "30's next now points at the new node, so 45 sits at position 2.",
+    "highlight": {
+      "nodes": [
+        "n2",
+        "n4"
+      ],
+      "active": "n4",
+      "edges": [
+        {
+          "from": "n2",
+          "to": "n4",
+          "kind": "next"
+        }
+      ]
+    },
+    "delta": {
+      "unlinked": [
+        {
+          "from": "n2",
+          "to": "n3",
+          "kind": "next"
+        }
+      ],
+      "linked": [
+        {
+          "from": "n2",
+          "to": "n4",
+          "kind": "next"
+        }
+      ]
+    }
+  },
+  {
+    "index": 9,
+    "operation": "insertAt",
+    "codeLine": 14,
+    "narration": "Inserted 45 at position 2 in O(k) = 2 comparison(s).",
+    "highlight": {
+      "nodes": [
+        "n4"
+      ],
+      "active": "n4",
+      "edges": []
+    },
+    "delta": {}
+  }
+]

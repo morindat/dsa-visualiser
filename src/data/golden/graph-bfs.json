@@ -1,0 +1,919 @@
+[
+  {
+    "index": 0,
+    "operation": "bfs",
+    "codeLine": 3,
+    "narration": "Mark v1 discovered at distance 0 and enqueue it. Discovery is what prevents a vertex from entering the queue twice.",
+    "highlight": {
+      "nodes": [
+        "v1"
+      ],
+      "active": "v1",
+      "edges": []
+    },
+    "delta": {},
+    "aux": {
+      "kind": "queue",
+      "values": [
+        "v1"
+      ],
+      "visited": [
+        "v1"
+      ],
+      "comparisons": 0
+    }
+  },
+  {
+    "index": 1,
+    "operation": "bfs",
+    "codeLine": 6,
+    "narration": "Dequeue v1 (distance 0) and visit it. Its neighbours are examined next.",
+    "highlight": {
+      "nodes": [
+        "v1"
+      ],
+      "active": "v1",
+      "edges": []
+    },
+    "delta": {},
+    "aux": {
+      "kind": "queue",
+      "values": [],
+      "visited": [
+        "v1"
+      ],
+      "comparisons": 0
+    }
+  },
+  {
+    "index": 2,
+    "operation": "bfs",
+    "codeLine": 7,
+    "narration": "Examine edge v1 → v2.",
+    "highlight": {
+      "nodes": [
+        "v1"
+      ],
+      "active": "v1",
+      "edges": [
+        {
+          "from": "v1",
+          "to": "v2"
+        }
+      ]
+    },
+    "delta": {},
+    "aux": {
+      "kind": "queue",
+      "values": [],
+      "visited": [
+        "v1"
+      ],
+      "comparisons": 1
+    }
+  },
+  {
+    "index": 3,
+    "operation": "bfs",
+    "codeLine": 9,
+    "narration": "Discover v2 via v1 at distance 1; mark it and enqueue it.",
+    "highlight": {
+      "nodes": [
+        "v1",
+        "v2"
+      ],
+      "active": "v2",
+      "edges": [
+        {
+          "from": "v1",
+          "to": "v2"
+        }
+      ]
+    },
+    "delta": {},
+    "aux": {
+      "kind": "queue",
+      "values": [
+        "v2"
+      ],
+      "visited": [
+        "v1",
+        "v2"
+      ],
+      "comparisons": 1
+    }
+  },
+  {
+    "index": 4,
+    "operation": "bfs",
+    "codeLine": 7,
+    "narration": "Examine edge v1 → v3.",
+    "highlight": {
+      "nodes": [
+        "v1",
+        "v2"
+      ],
+      "active": "v1",
+      "edges": [
+        {
+          "from": "v1",
+          "to": "v3"
+        }
+      ]
+    },
+    "delta": {},
+    "aux": {
+      "kind": "queue",
+      "values": [
+        "v2"
+      ],
+      "visited": [
+        "v1",
+        "v2"
+      ],
+      "comparisons": 2
+    }
+  },
+  {
+    "index": 5,
+    "operation": "bfs",
+    "codeLine": 9,
+    "narration": "Discover v3 via v1 at distance 1; mark it and enqueue it.",
+    "highlight": {
+      "nodes": [
+        "v1",
+        "v2",
+        "v3"
+      ],
+      "active": "v3",
+      "edges": [
+        {
+          "from": "v1",
+          "to": "v3"
+        }
+      ]
+    },
+    "delta": {},
+    "aux": {
+      "kind": "queue",
+      "values": [
+        "v2",
+        "v3"
+      ],
+      "visited": [
+        "v1",
+        "v2",
+        "v3"
+      ],
+      "comparisons": 2
+    }
+  },
+  {
+    "index": 6,
+    "operation": "bfs",
+    "codeLine": 6,
+    "narration": "Dequeue v2 (distance 1) and visit it. Its neighbours are examined next.",
+    "highlight": {
+      "nodes": [
+        "v1",
+        "v2",
+        "v3"
+      ],
+      "active": "v2",
+      "edges": []
+    },
+    "delta": {},
+    "aux": {
+      "kind": "queue",
+      "values": [
+        "v3"
+      ],
+      "visited": [
+        "v1",
+        "v2",
+        "v3"
+      ],
+      "comparisons": 2
+    }
+  },
+  {
+    "index": 7,
+    "operation": "bfs",
+    "codeLine": 7,
+    "narration": "Examine edge v2 → v1.",
+    "highlight": {
+      "nodes": [
+        "v1",
+        "v2",
+        "v3"
+      ],
+      "active": "v2",
+      "edges": [
+        {
+          "from": "v2",
+          "to": "v1"
+        }
+      ]
+    },
+    "delta": {},
+    "aux": {
+      "kind": "queue",
+      "values": [
+        "v3"
+      ],
+      "visited": [
+        "v1",
+        "v2",
+        "v3"
+      ],
+      "comparisons": 3
+    }
+  },
+  {
+    "index": 8,
+    "operation": "bfs",
+    "codeLine": 7,
+    "narration": "Examine edge v2 → v4.",
+    "highlight": {
+      "nodes": [
+        "v1",
+        "v2",
+        "v3"
+      ],
+      "active": "v2",
+      "edges": [
+        {
+          "from": "v2",
+          "to": "v4"
+        }
+      ]
+    },
+    "delta": {},
+    "aux": {
+      "kind": "queue",
+      "values": [
+        "v3"
+      ],
+      "visited": [
+        "v1",
+        "v2",
+        "v3"
+      ],
+      "comparisons": 4
+    }
+  },
+  {
+    "index": 9,
+    "operation": "bfs",
+    "codeLine": 9,
+    "narration": "Discover v4 via v2 at distance 2; mark it and enqueue it.",
+    "highlight": {
+      "nodes": [
+        "v1",
+        "v2",
+        "v3",
+        "v4"
+      ],
+      "active": "v4",
+      "edges": [
+        {
+          "from": "v2",
+          "to": "v4"
+        }
+      ]
+    },
+    "delta": {},
+    "aux": {
+      "kind": "queue",
+      "values": [
+        "v3",
+        "v4"
+      ],
+      "visited": [
+        "v1",
+        "v2",
+        "v3",
+        "v4"
+      ],
+      "comparisons": 4
+    }
+  },
+  {
+    "index": 10,
+    "operation": "bfs",
+    "codeLine": 7,
+    "narration": "Examine edge v2 → v5.",
+    "highlight": {
+      "nodes": [
+        "v1",
+        "v2",
+        "v3",
+        "v4"
+      ],
+      "active": "v2",
+      "edges": [
+        {
+          "from": "v2",
+          "to": "v5"
+        }
+      ]
+    },
+    "delta": {},
+    "aux": {
+      "kind": "queue",
+      "values": [
+        "v3",
+        "v4"
+      ],
+      "visited": [
+        "v1",
+        "v2",
+        "v3",
+        "v4"
+      ],
+      "comparisons": 5
+    }
+  },
+  {
+    "index": 11,
+    "operation": "bfs",
+    "codeLine": 9,
+    "narration": "Discover v5 via v2 at distance 2; mark it and enqueue it.",
+    "highlight": {
+      "nodes": [
+        "v1",
+        "v2",
+        "v3",
+        "v4",
+        "v5"
+      ],
+      "active": "v5",
+      "edges": [
+        {
+          "from": "v2",
+          "to": "v5"
+        }
+      ]
+    },
+    "delta": {},
+    "aux": {
+      "kind": "queue",
+      "values": [
+        "v3",
+        "v4",
+        "v5"
+      ],
+      "visited": [
+        "v1",
+        "v2",
+        "v3",
+        "v4",
+        "v5"
+      ],
+      "comparisons": 5
+    }
+  },
+  {
+    "index": 12,
+    "operation": "bfs",
+    "codeLine": 6,
+    "narration": "Dequeue v3 (distance 1) and visit it. Its neighbours are examined next.",
+    "highlight": {
+      "nodes": [
+        "v1",
+        "v2",
+        "v3",
+        "v4",
+        "v5"
+      ],
+      "active": "v3",
+      "edges": []
+    },
+    "delta": {},
+    "aux": {
+      "kind": "queue",
+      "values": [
+        "v4",
+        "v5"
+      ],
+      "visited": [
+        "v1",
+        "v2",
+        "v3",
+        "v4",
+        "v5"
+      ],
+      "comparisons": 5
+    }
+  },
+  {
+    "index": 13,
+    "operation": "bfs",
+    "codeLine": 7,
+    "narration": "Examine edge v3 → v1.",
+    "highlight": {
+      "nodes": [
+        "v1",
+        "v2",
+        "v3",
+        "v4",
+        "v5"
+      ],
+      "active": "v3",
+      "edges": [
+        {
+          "from": "v3",
+          "to": "v1"
+        }
+      ]
+    },
+    "delta": {},
+    "aux": {
+      "kind": "queue",
+      "values": [
+        "v4",
+        "v5"
+      ],
+      "visited": [
+        "v1",
+        "v2",
+        "v3",
+        "v4",
+        "v5"
+      ],
+      "comparisons": 6
+    }
+  },
+  {
+    "index": 14,
+    "operation": "bfs",
+    "codeLine": 7,
+    "narration": "Examine edge v3 → v5.",
+    "highlight": {
+      "nodes": [
+        "v1",
+        "v2",
+        "v3",
+        "v4",
+        "v5"
+      ],
+      "active": "v3",
+      "edges": [
+        {
+          "from": "v3",
+          "to": "v5"
+        }
+      ]
+    },
+    "delta": {},
+    "aux": {
+      "kind": "queue",
+      "values": [
+        "v4",
+        "v5"
+      ],
+      "visited": [
+        "v1",
+        "v2",
+        "v3",
+        "v4",
+        "v5"
+      ],
+      "comparisons": 7
+    }
+  },
+  {
+    "index": 15,
+    "operation": "bfs",
+    "codeLine": 6,
+    "narration": "Dequeue v4 (distance 2) and visit it. Its neighbours are examined next.",
+    "highlight": {
+      "nodes": [
+        "v1",
+        "v2",
+        "v3",
+        "v4",
+        "v5"
+      ],
+      "active": "v4",
+      "edges": []
+    },
+    "delta": {},
+    "aux": {
+      "kind": "queue",
+      "values": [
+        "v5"
+      ],
+      "visited": [
+        "v1",
+        "v2",
+        "v3",
+        "v4",
+        "v5"
+      ],
+      "comparisons": 7
+    }
+  },
+  {
+    "index": 16,
+    "operation": "bfs",
+    "codeLine": 7,
+    "narration": "Examine edge v4 → v2.",
+    "highlight": {
+      "nodes": [
+        "v1",
+        "v2",
+        "v3",
+        "v4",
+        "v5"
+      ],
+      "active": "v4",
+      "edges": [
+        {
+          "from": "v4",
+          "to": "v2"
+        }
+      ]
+    },
+    "delta": {},
+    "aux": {
+      "kind": "queue",
+      "values": [
+        "v5"
+      ],
+      "visited": [
+        "v1",
+        "v2",
+        "v3",
+        "v4",
+        "v5"
+      ],
+      "comparisons": 8
+    }
+  },
+  {
+    "index": 17,
+    "operation": "bfs",
+    "codeLine": 7,
+    "narration": "Examine edge v4 → v6.",
+    "highlight": {
+      "nodes": [
+        "v1",
+        "v2",
+        "v3",
+        "v4",
+        "v5"
+      ],
+      "active": "v4",
+      "edges": [
+        {
+          "from": "v4",
+          "to": "v6"
+        }
+      ]
+    },
+    "delta": {},
+    "aux": {
+      "kind": "queue",
+      "values": [
+        "v5"
+      ],
+      "visited": [
+        "v1",
+        "v2",
+        "v3",
+        "v4",
+        "v5"
+      ],
+      "comparisons": 9
+    }
+  },
+  {
+    "index": 18,
+    "operation": "bfs",
+    "codeLine": 9,
+    "narration": "Discover v6 via v4 at distance 3; mark it and enqueue it.",
+    "highlight": {
+      "nodes": [
+        "v1",
+        "v2",
+        "v3",
+        "v4",
+        "v5",
+        "v6"
+      ],
+      "active": "v6",
+      "edges": [
+        {
+          "from": "v4",
+          "to": "v6"
+        }
+      ]
+    },
+    "delta": {},
+    "aux": {
+      "kind": "queue",
+      "values": [
+        "v5",
+        "v6"
+      ],
+      "visited": [
+        "v1",
+        "v2",
+        "v3",
+        "v4",
+        "v5",
+        "v6"
+      ],
+      "comparisons": 9
+    }
+  },
+  {
+    "index": 19,
+    "operation": "bfs",
+    "codeLine": 6,
+    "narration": "Dequeue v5 (distance 2) and visit it. Its neighbours are examined next.",
+    "highlight": {
+      "nodes": [
+        "v1",
+        "v2",
+        "v3",
+        "v4",
+        "v5",
+        "v6"
+      ],
+      "active": "v5",
+      "edges": []
+    },
+    "delta": {},
+    "aux": {
+      "kind": "queue",
+      "values": [
+        "v6"
+      ],
+      "visited": [
+        "v1",
+        "v2",
+        "v3",
+        "v4",
+        "v5",
+        "v6"
+      ],
+      "comparisons": 9
+    }
+  },
+  {
+    "index": 20,
+    "operation": "bfs",
+    "codeLine": 7,
+    "narration": "Examine edge v5 → v2.",
+    "highlight": {
+      "nodes": [
+        "v1",
+        "v2",
+        "v3",
+        "v4",
+        "v5",
+        "v6"
+      ],
+      "active": "v5",
+      "edges": [
+        {
+          "from": "v5",
+          "to": "v2"
+        }
+      ]
+    },
+    "delta": {},
+    "aux": {
+      "kind": "queue",
+      "values": [
+        "v6"
+      ],
+      "visited": [
+        "v1",
+        "v2",
+        "v3",
+        "v4",
+        "v5",
+        "v6"
+      ],
+      "comparisons": 10
+    }
+  },
+  {
+    "index": 21,
+    "operation": "bfs",
+    "codeLine": 7,
+    "narration": "Examine edge v5 → v3.",
+    "highlight": {
+      "nodes": [
+        "v1",
+        "v2",
+        "v3",
+        "v4",
+        "v5",
+        "v6"
+      ],
+      "active": "v5",
+      "edges": [
+        {
+          "from": "v5",
+          "to": "v3"
+        }
+      ]
+    },
+    "delta": {},
+    "aux": {
+      "kind": "queue",
+      "values": [
+        "v6"
+      ],
+      "visited": [
+        "v1",
+        "v2",
+        "v3",
+        "v4",
+        "v5",
+        "v6"
+      ],
+      "comparisons": 11
+    }
+  },
+  {
+    "index": 22,
+    "operation": "bfs",
+    "codeLine": 7,
+    "narration": "Examine edge v5 → v6.",
+    "highlight": {
+      "nodes": [
+        "v1",
+        "v2",
+        "v3",
+        "v4",
+        "v5",
+        "v6"
+      ],
+      "active": "v5",
+      "edges": [
+        {
+          "from": "v5",
+          "to": "v6"
+        }
+      ]
+    },
+    "delta": {},
+    "aux": {
+      "kind": "queue",
+      "values": [
+        "v6"
+      ],
+      "visited": [
+        "v1",
+        "v2",
+        "v3",
+        "v4",
+        "v5",
+        "v6"
+      ],
+      "comparisons": 12
+    }
+  },
+  {
+    "index": 23,
+    "operation": "bfs",
+    "codeLine": 6,
+    "narration": "Dequeue v6 (distance 3) and visit it. Its neighbours are examined next.",
+    "highlight": {
+      "nodes": [
+        "v1",
+        "v2",
+        "v3",
+        "v4",
+        "v5",
+        "v6"
+      ],
+      "active": "v6",
+      "edges": []
+    },
+    "delta": {},
+    "aux": {
+      "kind": "queue",
+      "values": [],
+      "visited": [
+        "v1",
+        "v2",
+        "v3",
+        "v4",
+        "v5",
+        "v6"
+      ],
+      "comparisons": 12
+    }
+  },
+  {
+    "index": 24,
+    "operation": "bfs",
+    "codeLine": 7,
+    "narration": "Examine edge v6 → v4.",
+    "highlight": {
+      "nodes": [
+        "v1",
+        "v2",
+        "v3",
+        "v4",
+        "v5",
+        "v6"
+      ],
+      "active": "v6",
+      "edges": [
+        {
+          "from": "v6",
+          "to": "v4"
+        }
+      ]
+    },
+    "delta": {},
+    "aux": {
+      "kind": "queue",
+      "values": [],
+      "visited": [
+        "v1",
+        "v2",
+        "v3",
+        "v4",
+        "v5",
+        "v6"
+      ],
+      "comparisons": 13
+    }
+  },
+  {
+    "index": 25,
+    "operation": "bfs",
+    "codeLine": 7,
+    "narration": "Examine edge v6 → v5.",
+    "highlight": {
+      "nodes": [
+        "v1",
+        "v2",
+        "v3",
+        "v4",
+        "v5",
+        "v6"
+      ],
+      "active": "v6",
+      "edges": [
+        {
+          "from": "v6",
+          "to": "v5"
+        }
+      ]
+    },
+    "delta": {},
+    "aux": {
+      "kind": "queue",
+      "values": [],
+      "visited": [
+        "v1",
+        "v2",
+        "v3",
+        "v4",
+        "v5",
+        "v6"
+      ],
+      "comparisons": 14
+    }
+  },
+  {
+    "index": 26,
+    "operation": "bfs",
+    "codeLine": 11,
+    "narration": "The queue is empty, so the reachable component is exhausted. Visit order: v1, v2, v3, v4, v5, v6.",
+    "highlight": {
+      "nodes": [
+        "v1",
+        "v2",
+        "v3",
+        "v4",
+        "v5",
+        "v6"
+      ],
+      "edges": []
+    },
+    "delta": {},
+    "aux": {
+      "kind": "queue",
+      "values": [],
+      "visited": [
+        "v1",
+        "v2",
+        "v3",
+        "v4",
+        "v5",
+        "v6"
+      ],
+      "comparisons": 14
+    }
+  }
+]

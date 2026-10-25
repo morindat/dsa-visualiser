@@ -1,0 +1,140 @@
+[
+  {
+    "index": 0,
+    "operation": "bstDelete",
+    "codeLine": 3,
+    "narration": "Compare 50 with 50 at n1.",
+    "highlight": {
+      "nodes": [
+        "n1"
+      ],
+      "active": "n1",
+      "edges": []
+    },
+    "delta": {}
+  },
+  {
+    "index": 1,
+    "operation": "bstDelete",
+    "codeLine": 17,
+    "narration": "n1 has two children, so replace its value with its in-order successor: the leftmost node of its right subtree, starting at n3.",
+    "highlight": {
+      "nodes": [
+        "n1",
+        "n3"
+      ],
+      "active": "n3",
+      "edges": []
+    },
+    "delta": {}
+  },
+  {
+    "index": 2,
+    "operation": "bstDelete",
+    "codeLine": 18,
+    "narration": "n3 has a left child, so the successor is further left.",
+    "highlight": {
+      "nodes": [
+        "n1",
+        "n3",
+        "n4"
+      ],
+      "active": "n4",
+      "edges": []
+    },
+    "delta": {}
+  },
+  {
+    "index": 3,
+    "operation": "bstDelete",
+    "codeLine": 19,
+    "narration": "Move to n4 — the smallest key in n1's right subtree.",
+    "highlight": {
+      "nodes": [
+        "n1",
+        "n4"
+      ],
+      "active": "n4",
+      "edges": []
+    },
+    "delta": {}
+  },
+  {
+    "index": 4,
+    "operation": "bstDelete",
+    "codeLine": 20,
+    "narration": "Copy the successor value 60 up into n1. n1 keeps its node identity and both its subtrees; only the key changes.",
+    "highlight": {
+      "nodes": [
+        "n1",
+        "n4"
+      ],
+      "active": "n1",
+      "edges": []
+    },
+    "delta": {
+      "updated": [
+        {
+          "id": "n1",
+          "from": 50,
+          "to": 60
+        }
+      ]
+    }
+  },
+  {
+    "index": 5,
+    "operation": "bstDelete",
+    "codeLine": 22,
+    "narration": "The successor n4 has no left child; detach its parent's left pointer.",
+    "highlight": {
+      "nodes": [
+        "n1",
+        "n4"
+      ],
+      "active": "n3",
+      "edges": []
+    },
+    "delta": {
+      "unlinked": [
+        {
+          "from": "n3",
+          "to": "n4",
+          "kind": "left"
+        }
+      ]
+    }
+  },
+  {
+    "index": 6,
+    "operation": "bstDelete",
+    "codeLine": 23,
+    "narration": "Remove the successor node n4; its value now lives in n1.",
+    "highlight": {
+      "nodes": [
+        "n1"
+      ],
+      "active": "n1",
+      "edges": []
+    },
+    "delta": {
+      "removed": [
+        "n4"
+      ]
+    }
+  },
+  {
+    "index": 7,
+    "operation": "bstDelete",
+    "codeLine": 24,
+    "narration": "Deleted 50: copied the successor up, then removed it — O(h) for the find plus O(h) for the successor walk.",
+    "highlight": {
+      "nodes": [
+        "n1"
+      ],
+      "active": "n1",
+      "edges": []
+    },
+    "delta": {}
+  }
+]

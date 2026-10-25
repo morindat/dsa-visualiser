@@ -1,0 +1,111 @@
+[
+  {
+    "index": 0,
+    "operation": "bstInsert",
+    "codeLine": 6,
+    "narration": "Compare 45 with 50 at n1: 45 is smaller, so the walk goes left.",
+    "highlight": {
+      "nodes": [
+        "n1"
+      ],
+      "active": "n1",
+      "edges": []
+    },
+    "delta": {}
+  },
+  {
+    "index": 1,
+    "operation": "bstInsert",
+    "codeLine": 11,
+    "narration": "Compare 45 with 30 at n2: 45 is larger, so the walk goes right.",
+    "highlight": {
+      "nodes": [
+        "n1",
+        "n2"
+      ],
+      "active": "n2",
+      "edges": [
+        {
+          "from": "n1",
+          "to": "n2",
+          "kind": "left"
+        }
+      ]
+    },
+    "delta": {}
+  },
+  {
+    "index": 2,
+    "operation": "bstInsert",
+    "codeLine": 11,
+    "narration": "Compare 45 with 40 at n5: 45 is larger, so the walk goes right.",
+    "highlight": {
+      "nodes": [
+        "n1",
+        "n2",
+        "n5"
+      ],
+      "active": "n5",
+      "edges": [
+        {
+          "from": "n1",
+          "to": "n2",
+          "kind": "left"
+        },
+        {
+          "from": "n2",
+          "to": "n5",
+          "kind": "right"
+        }
+      ]
+    },
+    "delta": {}
+  },
+  {
+    "index": 3,
+    "operation": "bstInsert",
+    "codeLine": 13,
+    "narration": "The right child of n5 is null, so create a node holding 45 and link it as the right child.",
+    "highlight": {
+      "nodes": [
+        "n1",
+        "n2",
+        "n5",
+        "n6"
+      ],
+      "active": "n6",
+      "edges": [
+        {
+          "from": "n1",
+          "to": "n2",
+          "kind": "left"
+        },
+        {
+          "from": "n2",
+          "to": "n5",
+          "kind": "right"
+        },
+        {
+          "from": "n5",
+          "to": "n6",
+          "kind": "right"
+        }
+      ]
+    },
+    "delta": {
+      "created": [
+        {
+          "id": "n6",
+          "value": 45
+        }
+      ],
+      "linked": [
+        {
+          "from": "n5",
+          "to": "n6",
+          "kind": "right"
+        }
+      ]
+    }
+  }
+]

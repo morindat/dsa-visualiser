@@ -1,0 +1,717 @@
+[
+  {
+    "index": 0,
+    "operation": "inorder",
+    "codeLine": 1,
+    "narration": "Start at the root: call inorder(50) at n1.",
+    "highlight": {
+      "nodes": [],
+      "active": "n1",
+      "edges": []
+    },
+    "delta": {},
+    "aux": {
+      "kind": "recursion",
+      "frames": [
+        0
+      ],
+      "frameIds": [
+        "n1"
+      ],
+      "frameValues": [
+        50
+      ],
+      "visited": [],
+      "output": [],
+      "comparisons": 0
+    }
+  },
+  {
+    "index": 1,
+    "operation": "inorder",
+    "codeLine": 4,
+    "narration": "Go left: call inorder(30) at n2.",
+    "highlight": {
+      "nodes": [],
+      "active": "n2",
+      "edges": [
+        {
+          "from": "n1",
+          "to": "n2",
+          "kind": "left"
+        }
+      ]
+    },
+    "delta": {},
+    "aux": {
+      "kind": "recursion",
+      "frames": [
+        0,
+        1
+      ],
+      "frameIds": [
+        "n1",
+        "n2"
+      ],
+      "frameValues": [
+        50,
+        30
+      ],
+      "visited": [],
+      "output": [],
+      "comparisons": 0
+    }
+  },
+  {
+    "index": 2,
+    "operation": "inorder",
+    "codeLine": 4,
+    "narration": "Go left: call inorder(20) at n4.",
+    "highlight": {
+      "nodes": [],
+      "active": "n4",
+      "edges": [
+        {
+          "from": "n1",
+          "to": "n2",
+          "kind": "left"
+        },
+        {
+          "from": "n2",
+          "to": "n4",
+          "kind": "left"
+        }
+      ]
+    },
+    "delta": {},
+    "aux": {
+      "kind": "recursion",
+      "frames": [
+        0,
+        1,
+        2
+      ],
+      "frameIds": [
+        "n1",
+        "n2",
+        "n4"
+      ],
+      "frameValues": [
+        50,
+        30,
+        20
+      ],
+      "visited": [],
+      "output": [],
+      "comparisons": 0
+    }
+  },
+  {
+    "index": 3,
+    "operation": "inorder",
+    "codeLine": 5,
+    "narration": "The left subtree of n4 is complete, so visit 20 — the D of LDR — and append it to output.",
+    "highlight": {
+      "nodes": [
+        "n4"
+      ],
+      "active": "n4",
+      "edges": [
+        {
+          "from": "n1",
+          "to": "n2",
+          "kind": "left"
+        },
+        {
+          "from": "n2",
+          "to": "n4",
+          "kind": "left"
+        }
+      ]
+    },
+    "delta": {},
+    "aux": {
+      "kind": "recursion",
+      "frames": [
+        0,
+        1,
+        2
+      ],
+      "frameIds": [
+        "n1",
+        "n2",
+        "n4"
+      ],
+      "frameValues": [
+        50,
+        30,
+        20
+      ],
+      "visited": [
+        "n4"
+      ],
+      "output": [
+        20
+      ],
+      "comparisons": 0
+    }
+  },
+  {
+    "index": 4,
+    "operation": "inorder",
+    "codeLine": 5,
+    "narration": "The left subtree of n2 is complete, so visit 30 — the D of LDR — and append it to output.",
+    "highlight": {
+      "nodes": [
+        "n4",
+        "n2"
+      ],
+      "active": "n2",
+      "edges": [
+        {
+          "from": "n1",
+          "to": "n2",
+          "kind": "left"
+        }
+      ]
+    },
+    "delta": {},
+    "aux": {
+      "kind": "recursion",
+      "frames": [
+        0,
+        1
+      ],
+      "frameIds": [
+        "n1",
+        "n2"
+      ],
+      "frameValues": [
+        50,
+        30
+      ],
+      "visited": [
+        "n4",
+        "n2"
+      ],
+      "output": [
+        20,
+        30
+      ],
+      "comparisons": 0
+    }
+  },
+  {
+    "index": 5,
+    "operation": "inorder",
+    "codeLine": 6,
+    "narration": "Go right: call inorder(40) at n5.",
+    "highlight": {
+      "nodes": [
+        "n4",
+        "n2"
+      ],
+      "active": "n5",
+      "edges": [
+        {
+          "from": "n1",
+          "to": "n2",
+          "kind": "left"
+        },
+        {
+          "from": "n2",
+          "to": "n5",
+          "kind": "right"
+        }
+      ]
+    },
+    "delta": {},
+    "aux": {
+      "kind": "recursion",
+      "frames": [
+        0,
+        1,
+        2
+      ],
+      "frameIds": [
+        "n1",
+        "n2",
+        "n5"
+      ],
+      "frameValues": [
+        50,
+        30,
+        40
+      ],
+      "visited": [
+        "n4",
+        "n2"
+      ],
+      "output": [
+        20,
+        30
+      ],
+      "comparisons": 0
+    }
+  },
+  {
+    "index": 6,
+    "operation": "inorder",
+    "codeLine": 5,
+    "narration": "The left subtree of n5 is complete, so visit 40 — the D of LDR — and append it to output.",
+    "highlight": {
+      "nodes": [
+        "n4",
+        "n2",
+        "n5"
+      ],
+      "active": "n5",
+      "edges": [
+        {
+          "from": "n1",
+          "to": "n2",
+          "kind": "left"
+        },
+        {
+          "from": "n2",
+          "to": "n5",
+          "kind": "right"
+        }
+      ]
+    },
+    "delta": {},
+    "aux": {
+      "kind": "recursion",
+      "frames": [
+        0,
+        1,
+        2
+      ],
+      "frameIds": [
+        "n1",
+        "n2",
+        "n5"
+      ],
+      "frameValues": [
+        50,
+        30,
+        40
+      ],
+      "visited": [
+        "n4",
+        "n2",
+        "n5"
+      ],
+      "output": [
+        20,
+        30,
+        40
+      ],
+      "comparisons": 0
+    }
+  },
+  {
+    "index": 7,
+    "operation": "inorder",
+    "codeLine": 5,
+    "narration": "The left subtree of n1 is complete, so visit 50 — the D of LDR — and append it to output.",
+    "highlight": {
+      "nodes": [
+        "n4",
+        "n2",
+        "n5",
+        "n1"
+      ],
+      "active": "n1",
+      "edges": []
+    },
+    "delta": {},
+    "aux": {
+      "kind": "recursion",
+      "frames": [
+        0
+      ],
+      "frameIds": [
+        "n1"
+      ],
+      "frameValues": [
+        50
+      ],
+      "visited": [
+        "n4",
+        "n2",
+        "n5",
+        "n1"
+      ],
+      "output": [
+        20,
+        30,
+        40,
+        50
+      ],
+      "comparisons": 0
+    }
+  },
+  {
+    "index": 8,
+    "operation": "inorder",
+    "codeLine": 6,
+    "narration": "Go right: call inorder(70) at n3.",
+    "highlight": {
+      "nodes": [
+        "n4",
+        "n2",
+        "n5",
+        "n1"
+      ],
+      "active": "n3",
+      "edges": [
+        {
+          "from": "n1",
+          "to": "n3",
+          "kind": "right"
+        }
+      ]
+    },
+    "delta": {},
+    "aux": {
+      "kind": "recursion",
+      "frames": [
+        0,
+        1
+      ],
+      "frameIds": [
+        "n1",
+        "n3"
+      ],
+      "frameValues": [
+        50,
+        70
+      ],
+      "visited": [
+        "n4",
+        "n2",
+        "n5",
+        "n1"
+      ],
+      "output": [
+        20,
+        30,
+        40,
+        50
+      ],
+      "comparisons": 0
+    }
+  },
+  {
+    "index": 9,
+    "operation": "inorder",
+    "codeLine": 4,
+    "narration": "Go left: call inorder(60) at n6.",
+    "highlight": {
+      "nodes": [
+        "n4",
+        "n2",
+        "n5",
+        "n1"
+      ],
+      "active": "n6",
+      "edges": [
+        {
+          "from": "n1",
+          "to": "n3",
+          "kind": "right"
+        },
+        {
+          "from": "n3",
+          "to": "n6",
+          "kind": "left"
+        }
+      ]
+    },
+    "delta": {},
+    "aux": {
+      "kind": "recursion",
+      "frames": [
+        0,
+        1,
+        2
+      ],
+      "frameIds": [
+        "n1",
+        "n3",
+        "n6"
+      ],
+      "frameValues": [
+        50,
+        70,
+        60
+      ],
+      "visited": [
+        "n4",
+        "n2",
+        "n5",
+        "n1"
+      ],
+      "output": [
+        20,
+        30,
+        40,
+        50
+      ],
+      "comparisons": 0
+    }
+  },
+  {
+    "index": 10,
+    "operation": "inorder",
+    "codeLine": 5,
+    "narration": "The left subtree of n6 is complete, so visit 60 — the D of LDR — and append it to output.",
+    "highlight": {
+      "nodes": [
+        "n4",
+        "n2",
+        "n5",
+        "n1",
+        "n6"
+      ],
+      "active": "n6",
+      "edges": [
+        {
+          "from": "n1",
+          "to": "n3",
+          "kind": "right"
+        },
+        {
+          "from": "n3",
+          "to": "n6",
+          "kind": "left"
+        }
+      ]
+    },
+    "delta": {},
+    "aux": {
+      "kind": "recursion",
+      "frames": [
+        0,
+        1,
+        2
+      ],
+      "frameIds": [
+        "n1",
+        "n3",
+        "n6"
+      ],
+      "frameValues": [
+        50,
+        70,
+        60
+      ],
+      "visited": [
+        "n4",
+        "n2",
+        "n5",
+        "n1",
+        "n6"
+      ],
+      "output": [
+        20,
+        30,
+        40,
+        50,
+        60
+      ],
+      "comparisons": 0
+    }
+  },
+  {
+    "index": 11,
+    "operation": "inorder",
+    "codeLine": 5,
+    "narration": "The left subtree of n3 is complete, so visit 70 — the D of LDR — and append it to output.",
+    "highlight": {
+      "nodes": [
+        "n4",
+        "n2",
+        "n5",
+        "n1",
+        "n6",
+        "n3"
+      ],
+      "active": "n3",
+      "edges": [
+        {
+          "from": "n1",
+          "to": "n3",
+          "kind": "right"
+        }
+      ]
+    },
+    "delta": {},
+    "aux": {
+      "kind": "recursion",
+      "frames": [
+        0,
+        1
+      ],
+      "frameIds": [
+        "n1",
+        "n3"
+      ],
+      "frameValues": [
+        50,
+        70
+      ],
+      "visited": [
+        "n4",
+        "n2",
+        "n5",
+        "n1",
+        "n6",
+        "n3"
+      ],
+      "output": [
+        20,
+        30,
+        40,
+        50,
+        60,
+        70
+      ],
+      "comparisons": 0
+    }
+  },
+  {
+    "index": 12,
+    "operation": "inorder",
+    "codeLine": 6,
+    "narration": "Go right: call inorder(80) at n7.",
+    "highlight": {
+      "nodes": [
+        "n4",
+        "n2",
+        "n5",
+        "n1",
+        "n6",
+        "n3"
+      ],
+      "active": "n7",
+      "edges": [
+        {
+          "from": "n1",
+          "to": "n3",
+          "kind": "right"
+        },
+        {
+          "from": "n3",
+          "to": "n7",
+          "kind": "right"
+        }
+      ]
+    },
+    "delta": {},
+    "aux": {
+      "kind": "recursion",
+      "frames": [
+        0,
+        1,
+        2
+      ],
+      "frameIds": [
+        "n1",
+        "n3",
+        "n7"
+      ],
+      "frameValues": [
+        50,
+        70,
+        80
+      ],
+      "visited": [
+        "n4",
+        "n2",
+        "n5",
+        "n1",
+        "n6",
+        "n3"
+      ],
+      "output": [
+        20,
+        30,
+        40,
+        50,
+        60,
+        70
+      ],
+      "comparisons": 0
+    }
+  },
+  {
+    "index": 13,
+    "operation": "inorder",
+    "codeLine": 5,
+    "narration": "The left subtree of n7 is complete, so visit 80 — the D of LDR — and append it to output.",
+    "highlight": {
+      "nodes": [
+        "n4",
+        "n2",
+        "n5",
+        "n1",
+        "n6",
+        "n3",
+        "n7"
+      ],
+      "active": "n7",
+      "edges": [
+        {
+          "from": "n1",
+          "to": "n3",
+          "kind": "right"
+        },
+        {
+          "from": "n3",
+          "to": "n7",
+          "kind": "right"
+        }
+      ]
+    },
+    "delta": {},
+    "aux": {
+      "kind": "recursion",
+      "frames": [
+        0,
+        1,
+        2
+      ],
+      "frameIds": [
+        "n1",
+        "n3",
+        "n7"
+      ],
+      "frameValues": [
+        50,
+        70,
+        80
+      ],
+      "visited": [
+        "n4",
+        "n2",
+        "n5",
+        "n1",
+        "n6",
+        "n3",
+        "n7"
+      ],
+      "output": [
+        20,
+        30,
+        40,
+        50,
+        60,
+        70,
+        80
+      ],
+      "comparisons": 0
+    }
+  }
+]

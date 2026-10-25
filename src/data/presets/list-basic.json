@@ -1,0 +1,7 @@
+{
+  "id": "list-basic",
+  "structureId": "list",
+  "label": "Linked list (10 values)",
+  "description": "A mixed-order list for insert, delete and reverse. Ten values keep every link and pointer badge readable on screen.",
+  "values": [50, 30, 70, 20, 40, 60, 80, 10, 90, 25]
+}

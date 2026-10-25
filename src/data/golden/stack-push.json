@@ -1,0 +1,115 @@
+[
+  {
+    "index": 0,
+    "operation": "stackPush",
+    "codeLine": 2,
+    "narration": "There is room in the array: size 3 < capacity 4. No resize is needed.",
+    "highlight": {
+      "nodes": [],
+      "edges": []
+    },
+    "delta": {},
+    "aux": {
+      "kind": "stack",
+      "values": [
+        50,
+        30,
+        70
+      ],
+      "indices": [],
+      "comparisons": 0
+    }
+  },
+  {
+    "index": 1,
+    "operation": "stackPush",
+    "codeLine": 4,
+    "narration": "Advance top from 2 to 3. The new cell is reserved but still empty.",
+    "highlight": {
+      "nodes": [],
+      "edges": []
+    },
+    "delta": {
+      "updated": [
+        {
+          "id": "@top",
+          "from": 2,
+          "to": 3
+        }
+      ]
+    },
+    "aux": {
+      "kind": "stack",
+      "values": [
+        50,
+        30,
+        70
+      ],
+      "indices": [
+        3
+      ],
+      "comparisons": 0
+    }
+  },
+  {
+    "index": 2,
+    "operation": "stackPush",
+    "codeLine": 5,
+    "narration": "Write 45 into slot 3; it is now the top entry.",
+    "highlight": {
+      "nodes": [
+        "s4"
+      ],
+      "active": "s4",
+      "edges": []
+    },
+    "delta": {
+      "created": [
+        {
+          "id": "s4",
+          "value": 45
+        }
+      ]
+    },
+    "aux": {
+      "kind": "stack",
+      "values": [
+        50,
+        30,
+        70,
+        45
+      ],
+      "indices": [
+        3
+      ],
+      "comparisons": 0
+    }
+  },
+  {
+    "index": 3,
+    "operation": "stackPush",
+    "codeLine": 6,
+    "narration": "Pushed 45. Only the top cell changed, so the push is O(1).",
+    "highlight": {
+      "nodes": [
+        "s4"
+      ],
+      "active": "s4",
+      "edges": []
+    },
+    "delta": {},
+    "aux": {
+      "kind": "stack",
+      "values": [
+        50,
+        30,
+        70,
+        45
+      ],
+      "indices": [
+        3
+      ],
+      "comparisons": 0
+    }
+  }
+]

@@ -1,0 +1,8 @@
+{
+  "id": "heap-unsorted",
+  "structureId": "heap",
+  "label": "Unsorted array (10 values, build-heap)",
+  "description": "An arbitrary array for buildMinHeap/buildMaxHeap. Heapifying it bottom-up takes O(n); inserting the same values one at a time takes O(n log n). The step counts shown side by side are the lesson.",
+  "kind": "raw",
+  "values": [42, 7, 19, 3, 88, 15, 27, 1, 56, 34]
+}

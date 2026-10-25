@@ -1,0 +1,141 @@
+[
+  {
+    "index": 0,
+    "operation": "stackPop",
+    "codeLine": 2,
+    "narration": "The stack is not empty: top is slot 2, holding 70.",
+    "highlight": {
+      "nodes": [
+        "s3"
+      ],
+      "active": "s3",
+      "edges": []
+    },
+    "delta": {},
+    "aux": {
+      "kind": "stack",
+      "values": [
+        50,
+        30,
+        70
+      ],
+      "indices": [
+        2
+      ],
+      "comparisons": 0
+    }
+  },
+  {
+    "index": 1,
+    "operation": "stackPop",
+    "codeLine": 4,
+    "narration": "Read the top value 70; it will be returned after the pointer moves.",
+    "highlight": {
+      "nodes": [
+        "s3"
+      ],
+      "active": "s3",
+      "edges": []
+    },
+    "delta": {},
+    "aux": {
+      "kind": "stack",
+      "values": [
+        50,
+        30,
+        70
+      ],
+      "indices": [
+        2
+      ],
+      "comparisons": 0
+    }
+  },
+  {
+    "index": 2,
+    "operation": "stackPop",
+    "codeLine": 5,
+    "narration": "Move top from 2 down to 1. The old top cell is now above the stack and will be removed.",
+    "highlight": {
+      "nodes": [
+        "s3"
+      ],
+      "active": "s3",
+      "edges": []
+    },
+    "delta": {
+      "updated": [
+        {
+          "id": "@top",
+          "from": 2,
+          "to": 1
+        }
+      ]
+    },
+    "aux": {
+      "kind": "stack",
+      "values": [
+        50,
+        30
+      ],
+      "indices": [
+        1
+      ],
+      "comparisons": 0
+    }
+  },
+  {
+    "index": 3,
+    "operation": "stackPop",
+    "codeLine": 6,
+    "narration": "Remove 70 from slot 2. 30 is now the top.",
+    "highlight": {
+      "nodes": [
+        "s2"
+      ],
+      "active": "s2",
+      "edges": []
+    },
+    "delta": {
+      "removed": [
+        "s3"
+      ]
+    },
+    "aux": {
+      "kind": "stack",
+      "values": [
+        50,
+        30
+      ],
+      "indices": [
+        1
+      ],
+      "comparisons": 0
+    }
+  },
+  {
+    "index": 4,
+    "operation": "stackPop",
+    "codeLine": 7,
+    "narration": "Return 70. O(1): only the top cell and the top pointer were touched.",
+    "highlight": {
+      "nodes": [
+        "s2"
+      ],
+      "active": "s2",
+      "edges": []
+    },
+    "delta": {},
+    "aux": {
+      "kind": "stack",
+      "values": [
+        50,
+        30
+      ],
+      "indices": [
+        1
+      ],
+      "comparisons": 0
+    }
+  }
+]

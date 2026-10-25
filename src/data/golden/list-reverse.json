@@ -1,0 +1,709 @@
+[
+  {
+    "index": 0,
+    "operation": "reverse",
+    "codeLine": 2,
+    "narration": "prev starts as null: there is no node before the head, so the new tail will point at null.",
+    "highlight": {
+      "nodes": [],
+      "edges": []
+    },
+    "delta": {},
+    "aux": {
+      "kind": "pointers",
+      "pointers": [
+        {
+          "role": "prev",
+          "id": null
+        },
+        {
+          "role": "current",
+          "id": null
+        },
+        {
+          "role": "next",
+          "id": null
+        }
+      ],
+      "comparisons": 0
+    }
+  },
+  {
+    "index": 1,
+    "operation": "reverse",
+    "codeLine": 3,
+    "narration": "current starts at head, 50 (n1). The walk will rewire every node once.",
+    "highlight": {
+      "nodes": [
+        "n1"
+      ],
+      "active": "n1",
+      "edges": []
+    },
+    "delta": {},
+    "aux": {
+      "kind": "pointers",
+      "pointers": [
+        {
+          "role": "prev",
+          "id": null
+        },
+        {
+          "role": "current",
+          "id": "n1"
+        },
+        {
+          "role": "next",
+          "id": null
+        }
+      ],
+      "comparisons": 0
+    }
+  },
+  {
+    "index": 2,
+    "operation": "reverse",
+    "codeLine": 4,
+    "narration": "Loop check: current is 50 (n1), so there is still a node to rewire.",
+    "highlight": {
+      "nodes": [
+        "n1"
+      ],
+      "active": "n1",
+      "edges": []
+    },
+    "delta": {},
+    "aux": {
+      "kind": "pointers",
+      "pointers": [
+        {
+          "role": "prev",
+          "id": null
+        },
+        {
+          "role": "current",
+          "id": "n1"
+        },
+        {
+          "role": "next",
+          "id": null
+        }
+      ],
+      "comparisons": 0
+    }
+  },
+  {
+    "index": 3,
+    "operation": "reverse",
+    "codeLine": 5,
+    "narration": "Save next = 30 (n2) BEFORE cutting 50 (n1)'s link. Without this temporary pointer, the rest of the list would be lost.",
+    "highlight": {
+      "nodes": [
+        "n1",
+        "n2"
+      ],
+      "active": "n1",
+      "edges": [
+        {
+          "from": "n1",
+          "to": "n2",
+          "kind": "next"
+        }
+      ]
+    },
+    "delta": {},
+    "aux": {
+      "kind": "pointers",
+      "pointers": [
+        {
+          "role": "prev",
+          "id": null
+        },
+        {
+          "role": "current",
+          "id": "n1"
+        },
+        {
+          "role": "next",
+          "id": "n2"
+        }
+      ],
+      "comparisons": 0
+    }
+  },
+  {
+    "index": 4,
+    "operation": "reverse",
+    "codeLine": 6,
+    "narration": "Reverse 50 (n1)'s next pointer: it now points at null, so 50 (n1) becomes the last node.",
+    "highlight": {
+      "nodes": [
+        "n1"
+      ],
+      "active": "n1",
+      "edges": []
+    },
+    "delta": {
+      "unlinked": [
+        {
+          "from": "n1",
+          "to": "n2",
+          "kind": "next"
+        }
+      ]
+    },
+    "aux": {
+      "kind": "pointers",
+      "pointers": [
+        {
+          "role": "prev",
+          "id": null
+        },
+        {
+          "role": "current",
+          "id": "n1"
+        },
+        {
+          "role": "next",
+          "id": "n2"
+        }
+      ],
+      "comparisons": 0
+    }
+  },
+  {
+    "index": 5,
+    "operation": "reverse",
+    "codeLine": 7,
+    "narration": "Advance prev to 50 (n1). The reversed prefix now ends here.",
+    "highlight": {
+      "nodes": [
+        "n1"
+      ],
+      "active": "n1",
+      "edges": []
+    },
+    "delta": {},
+    "aux": {
+      "kind": "pointers",
+      "pointers": [
+        {
+          "role": "prev",
+          "id": "n1"
+        },
+        {
+          "role": "current",
+          "id": "n1"
+        },
+        {
+          "role": "next",
+          "id": "n2"
+        }
+      ],
+      "comparisons": 0
+    }
+  },
+  {
+    "index": 6,
+    "operation": "reverse",
+    "codeLine": 8,
+    "narration": "Advance current to 30 (n2), the node saved at line 5.",
+    "highlight": {
+      "nodes": [
+        "n1",
+        "n2"
+      ],
+      "active": "n2",
+      "edges": []
+    },
+    "delta": {},
+    "aux": {
+      "kind": "pointers",
+      "pointers": [
+        {
+          "role": "prev",
+          "id": "n1"
+        },
+        {
+          "role": "current",
+          "id": "n2"
+        },
+        {
+          "role": "next",
+          "id": null
+        }
+      ],
+      "comparisons": 0
+    }
+  },
+  {
+    "index": 7,
+    "operation": "reverse",
+    "codeLine": 4,
+    "narration": "Loop check: current is 30 (n2), so there is still a node to rewire.",
+    "highlight": {
+      "nodes": [
+        "n2"
+      ],
+      "active": "n2",
+      "edges": []
+    },
+    "delta": {},
+    "aux": {
+      "kind": "pointers",
+      "pointers": [
+        {
+          "role": "prev",
+          "id": "n1"
+        },
+        {
+          "role": "current",
+          "id": "n2"
+        },
+        {
+          "role": "next",
+          "id": null
+        }
+      ],
+      "comparisons": 0
+    }
+  },
+  {
+    "index": 8,
+    "operation": "reverse",
+    "codeLine": 5,
+    "narration": "Save next = 70 (n3) BEFORE cutting 30 (n2)'s link. Without this temporary pointer, the rest of the list would be lost.",
+    "highlight": {
+      "nodes": [
+        "n2",
+        "n3"
+      ],
+      "active": "n2",
+      "edges": [
+        {
+          "from": "n2",
+          "to": "n3",
+          "kind": "next"
+        }
+      ]
+    },
+    "delta": {},
+    "aux": {
+      "kind": "pointers",
+      "pointers": [
+        {
+          "role": "prev",
+          "id": "n1"
+        },
+        {
+          "role": "current",
+          "id": "n2"
+        },
+        {
+          "role": "next",
+          "id": "n3"
+        }
+      ],
+      "comparisons": 0
+    }
+  },
+  {
+    "index": 9,
+    "operation": "reverse",
+    "codeLine": 6,
+    "narration": "Reverse 30 (n2)'s next pointer: it now points back at 50 (n1) instead of 70 (n3).",
+    "highlight": {
+      "nodes": [
+        "n2",
+        "n1",
+        "n3"
+      ],
+      "active": "n2",
+      "edges": [
+        {
+          "from": "n2",
+          "to": "n1",
+          "kind": "next"
+        }
+      ]
+    },
+    "delta": {
+      "unlinked": [
+        {
+          "from": "n2",
+          "to": "n3",
+          "kind": "next"
+        }
+      ],
+      "linked": [
+        {
+          "from": "n2",
+          "to": "n1",
+          "kind": "next"
+        }
+      ]
+    },
+    "aux": {
+      "kind": "pointers",
+      "pointers": [
+        {
+          "role": "prev",
+          "id": "n1"
+        },
+        {
+          "role": "current",
+          "id": "n2"
+        },
+        {
+          "role": "next",
+          "id": "n3"
+        }
+      ],
+      "comparisons": 0
+    }
+  },
+  {
+    "index": 10,
+    "operation": "reverse",
+    "codeLine": 7,
+    "narration": "Advance prev to 30 (n2). The reversed prefix now ends here.",
+    "highlight": {
+      "nodes": [
+        "n2"
+      ],
+      "active": "n2",
+      "edges": []
+    },
+    "delta": {},
+    "aux": {
+      "kind": "pointers",
+      "pointers": [
+        {
+          "role": "prev",
+          "id": "n2"
+        },
+        {
+          "role": "current",
+          "id": "n2"
+        },
+        {
+          "role": "next",
+          "id": "n3"
+        }
+      ],
+      "comparisons": 0
+    }
+  },
+  {
+    "index": 11,
+    "operation": "reverse",
+    "codeLine": 8,
+    "narration": "Advance current to 70 (n3), the node saved at line 5.",
+    "highlight": {
+      "nodes": [
+        "n2",
+        "n3"
+      ],
+      "active": "n3",
+      "edges": []
+    },
+    "delta": {},
+    "aux": {
+      "kind": "pointers",
+      "pointers": [
+        {
+          "role": "prev",
+          "id": "n2"
+        },
+        {
+          "role": "current",
+          "id": "n3"
+        },
+        {
+          "role": "next",
+          "id": null
+        }
+      ],
+      "comparisons": 0
+    }
+  },
+  {
+    "index": 12,
+    "operation": "reverse",
+    "codeLine": 4,
+    "narration": "Loop check: current is 70 (n3), so there is still a node to rewire.",
+    "highlight": {
+      "nodes": [
+        "n3"
+      ],
+      "active": "n3",
+      "edges": []
+    },
+    "delta": {},
+    "aux": {
+      "kind": "pointers",
+      "pointers": [
+        {
+          "role": "prev",
+          "id": "n2"
+        },
+        {
+          "role": "current",
+          "id": "n3"
+        },
+        {
+          "role": "next",
+          "id": null
+        }
+      ],
+      "comparisons": 0
+    }
+  },
+  {
+    "index": 13,
+    "operation": "reverse",
+    "codeLine": 5,
+    "narration": "Save next = null: 70 (n3) is the last node, so there is nothing after it.",
+    "highlight": {
+      "nodes": [
+        "n3"
+      ],
+      "active": "n3",
+      "edges": []
+    },
+    "delta": {},
+    "aux": {
+      "kind": "pointers",
+      "pointers": [
+        {
+          "role": "prev",
+          "id": "n2"
+        },
+        {
+          "role": "current",
+          "id": "n3"
+        },
+        {
+          "role": "next",
+          "id": null
+        }
+      ],
+      "comparisons": 0
+    }
+  },
+  {
+    "index": 14,
+    "operation": "reverse",
+    "codeLine": 6,
+    "narration": "Reverse 70 (n3)'s next pointer: it now points back at 30 (n2) instead of null.",
+    "highlight": {
+      "nodes": [
+        "n3",
+        "n2"
+      ],
+      "active": "n3",
+      "edges": [
+        {
+          "from": "n3",
+          "to": "n2",
+          "kind": "next"
+        }
+      ]
+    },
+    "delta": {
+      "linked": [
+        {
+          "from": "n3",
+          "to": "n2",
+          "kind": "next"
+        }
+      ]
+    },
+    "aux": {
+      "kind": "pointers",
+      "pointers": [
+        {
+          "role": "prev",
+          "id": "n2"
+        },
+        {
+          "role": "current",
+          "id": "n3"
+        },
+        {
+          "role": "next",
+          "id": null
+        }
+      ],
+      "comparisons": 0
+    }
+  },
+  {
+    "index": 15,
+    "operation": "reverse",
+    "codeLine": 7,
+    "narration": "Advance prev to 70 (n3). The reversed prefix now ends here.",
+    "highlight": {
+      "nodes": [
+        "n3"
+      ],
+      "active": "n3",
+      "edges": []
+    },
+    "delta": {},
+    "aux": {
+      "kind": "pointers",
+      "pointers": [
+        {
+          "role": "prev",
+          "id": "n3"
+        },
+        {
+          "role": "current",
+          "id": "n3"
+        },
+        {
+          "role": "next",
+          "id": null
+        }
+      ],
+      "comparisons": 0
+    }
+  },
+  {
+    "index": 16,
+    "operation": "reverse",
+    "codeLine": 8,
+    "narration": "Advance current to null: the saved next was null, so every node has been visited.",
+    "highlight": {
+      "nodes": [
+        "n3"
+      ],
+      "active": "n3",
+      "edges": []
+    },
+    "delta": {},
+    "aux": {
+      "kind": "pointers",
+      "pointers": [
+        {
+          "role": "prev",
+          "id": "n3"
+        },
+        {
+          "role": "current",
+          "id": null
+        },
+        {
+          "role": "next",
+          "id": null
+        }
+      ],
+      "comparisons": 0
+    }
+  },
+  {
+    "index": 17,
+    "operation": "reverse",
+    "codeLine": 4,
+    "narration": "Loop check: current is null, so every node has been rewired exactly once.",
+    "highlight": {
+      "nodes": [
+        "n3"
+      ],
+      "active": "n3",
+      "edges": []
+    },
+    "delta": {},
+    "aux": {
+      "kind": "pointers",
+      "pointers": [
+        {
+          "role": "prev",
+          "id": "n3"
+        },
+        {
+          "role": "current",
+          "id": null
+        },
+        {
+          "role": "next",
+          "id": null
+        }
+      ],
+      "comparisons": 0
+    }
+  },
+  {
+    "index": 18,
+    "operation": "reverse",
+    "codeLine": 9,
+    "narration": "Move head to 70 (n3) — the old tail and the new first node.",
+    "highlight": {
+      "nodes": [
+        "n3"
+      ],
+      "active": "n3",
+      "edges": []
+    },
+    "delta": {
+      "updated": [
+        {
+          "id": "@head",
+          "from": "n1",
+          "to": "n3"
+        }
+      ]
+    },
+    "aux": {
+      "kind": "pointers",
+      "pointers": [
+        {
+          "role": "prev",
+          "id": "n3"
+        },
+        {
+          "role": "current",
+          "id": null
+        },
+        {
+          "role": "next",
+          "id": null
+        }
+      ],
+      "comparisons": 0
+    }
+  },
+  {
+    "index": 19,
+    "operation": "reverse",
+    "codeLine": 10,
+    "narration": "Done: reversed 3 nodes in O(n) time and O(1) extra space. Every next pointer was flipped exactly once.",
+    "highlight": {
+      "nodes": [
+        "n3"
+      ],
+      "active": "n3",
+      "edges": []
+    },
+    "delta": {},
+    "aux": {
+      "kind": "pointers",
+      "pointers": [
+        {
+          "role": "prev",
+          "id": "n3"
+        },
+        {
+          "role": "current",
+          "id": null
+        },
+        {
+          "role": "next",
+          "id": null
+        }
+      ],
+      "comparisons": 0
+    }
+  }
+]
