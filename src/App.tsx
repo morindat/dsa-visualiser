@@ -355,14 +355,19 @@ function App() {
     }
   }, [applyRun, initialShared, visualise])
 
-  // Keep the address bar shareable without adding history entries. Tests run in
-  // jsdom and are deliberately kept out so one test cannot leak a run into the
-  // next through `window.location`.
+  // Keep the address bar shareable without adding history entries. The current
+  // origin is passed explicitly: `buildRunUrl` defaults to the public share URL,
+  // but `replaceState` may not cross origins. Tests run in jsdom and are
+  // deliberately kept out so one test cannot leak a run into the next through
+  // `window.location`.
   useEffect(() => {
     if (import.meta.env.MODE === 'test') return
     if (!snapshot.structureId || snapshot.trace.length === 0) return
     if (lastRunRef.current === null) return
-    const url = buildRunUrl(toShareableRun(lastRunRef.current, snapshot.index))
+    const url = buildRunUrl(
+      toShareableRun(lastRunRef.current, snapshot.index),
+      window.location.href,
+    )
     try {
       window.history.replaceState(null, '', url)
     } catch {

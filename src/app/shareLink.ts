@@ -11,6 +11,12 @@
 
 export const SHARE_VERSION = 1 as const
 
+/**
+ * The canonical public location a copied link should point at, so a share made
+ * from a local dev server or a preview deployment still opens the live demo.
+ */
+export const SHARE_BASE_URL = 'https://dsa-vis.netlify.app/' as const
+
 export type ShareableRun = {
   version: typeof SHARE_VERSION
   structureId: string
@@ -89,9 +95,9 @@ export function readRunFromSearch(search: string): ShareableRun | null {
 
 export function buildRunUrl(
   run: ShareableRun,
-  href: string = typeof window === 'undefined' ? '' : window.location.href,
+  href: string = SHARE_BASE_URL,
 ): string {
-  const url = new URL(href === '' ? 'http://localhost/' : href)
+  const url = new URL(href === '' ? SHARE_BASE_URL : href)
   url.search = ''
   url.hash = ''
   url.searchParams.set('run', encodeRun(run))

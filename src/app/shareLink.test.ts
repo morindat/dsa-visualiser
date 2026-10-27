@@ -4,6 +4,7 @@ import {
   decodeRun,
   encodeRun,
   readRunFromSearch,
+  SHARE_BASE_URL,
   toShareableRun,
   type RunRequestState,
 } from './shareLink'
@@ -66,6 +67,15 @@ describe('share links', () => {
     expect(url.pathname).toBe('/app')
     expect(url.hash).toBe('')
     expect(url.searchParams.get('old')).toBeNull()
+    expect(decodeRun(url.searchParams.get('run'))).toEqual(run)
+  })
+
+  it('defaults to the public share location', () => {
+    const run = toShareableRun(STATE, 2)
+    const url = new URL(buildRunUrl(run))
+    expect(SHARE_BASE_URL).toBe('https://dsa-vis.netlify.app/')
+    expect(url.origin).toBe('https://dsa-vis.netlify.app')
+    expect(url.pathname).toBe('/')
     expect(decodeRun(url.searchParams.get('run'))).toEqual(run)
   })
 })

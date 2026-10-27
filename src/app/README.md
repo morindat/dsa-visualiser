@@ -55,7 +55,9 @@ back into text and validated through the same functions — nothing bypasses val
 narration, two distractors come from other steps (or fixed fallbacks), and a seeded shuffle keeps
 the option order deterministic for a given run. `shareLink.ts` turns the validated request plus the
 step index into a query parameter and back, rejecting malformed payloads rather than partially
-applying them. Both modules are pure and DOM-free except for the optional URL default.
+applying them. Copied links always point at `SHARE_BASE_URL` (the deployed demo), so a share made
+from a local dev server still opens the live site; the address bar keeps the current origin. Both
+modules are pure and DOM-free.
 
 ## Rules
 
